@@ -1,0 +1,30 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local environment variables (keep .env.example in git)
+.env
+.env.*
+!.env.example
+
+# Transferred / runtime files
+dest/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

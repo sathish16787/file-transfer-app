@@ -1,0 +1,48 @@
+Switched to context "docker-desktop".
+⎈  switched → dd
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ unset alias
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ dd if=/dev/urandom of=source.bin bs=1m count=20
+Switched to context "docker-desktop".
+⎈  switched → dd
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ unset dd
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ dd if=/dev/urandom of=source.bin bs=1m count=20
+Switched to context "docker-desktop".
+⎈  switched → dd
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ \dd if=/dev/urandom of=source.bin bs=1m count=20
+20+0 records in
+20+0 records out
+20971520 bytes transferred in 0.064466 secs (325311327 bytes/sec)
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ ls -lrt
+total 40960
+drwxr-xr-x@ 2 apple  staff        64 24 Nov 14:08 src
+-rw-r--r--@ 1 apple  staff  20971520 24 Nov 14:10 source.bin
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ mkdir dest
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ ccode .
+-bash: ccode: command not found
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ code .
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ pwd
+/Users/apple/Desktop/project/file-transfer-lab
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ curl -X POST -F "file=@/Users/apple/Desktop/project/file-transfer-lab/source.bin" http://127.0.0.1:5000/transfer
+<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ ls -lrt
+total 40968
+-rw-r--r--@ 1 apple  staff  20971520 24 Nov 14:10 source.bin
+drwxr-xr-x@ 3 apple  staff        96 24 Nov 14:10 src
+drwxr-xr-x@ 3 apple  staff        96 24 Nov 14:36 dest
+-rw-r--r--@ 1 apple  staff       109 24 Nov 14:43 requirements.txt
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ curl -X POST -F "file=@/Users/apple/Desktop/project/file-transfer-lab/source.bin" http://127.0.0.1:5000/transfer
+<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+apple@L7RWYW2CG2 ~/Desktop/project/file-transfer-lab [dd] $ curl -X POST -F "file=@/Users/apple/Desktop/project/file-transfer-lab/source.bin" http://127.0.0.1:5000/transfer
+{
+  "message": "File transferred successfully",
+  "saved_as": "/Users/apple/Desktop/project/file-transfer-lab/dest/source.bin",
+  "sha256": "91f783e2684c14456de10120b01376b82c0f764646b1c9e8fe69f42c570201e1"
+}
