@@ -1,4 +1,0 @@
-service:
-  name: file-transfer-lab
-  chunk_size: 65536
-  verify_hash: true
