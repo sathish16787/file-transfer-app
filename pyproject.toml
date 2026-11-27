@@ -1,0 +1,4 @@
+[project]
+name = "file-transfer-app"
+version = "1.0.0"
+description = "A Flask-based file transfer application"
